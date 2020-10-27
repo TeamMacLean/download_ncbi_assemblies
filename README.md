@@ -37,7 +37,7 @@ We have the accessions in accessions.txt or any filename you give in the command
 There is a simple way to download the assemblies using wget option:
 
 ```
-while read gca; do first=${gca:4:3}; second=${gca:7:3}; third=${gca:10:3};  wget -r -nd -nc -A "*genomic.fna.gz" -R "*cds_from*" -R "*_rna_from_*" ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/$first/${second}/${third} ; done < accessions.txt
+while read gca; do first=${gca:4:3}; second=${gca:7:3}; third=${gca:10:3};  wget -r -nd -nc -A "${gca}_*genomic.fna.gz" -R "*cds_from*" -R "*_rna_from_*" ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/$first/${second}/${third} ; done < accessions.txt
 ```
 
 ### Command explanation:
